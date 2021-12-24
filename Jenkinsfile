@@ -32,5 +32,15 @@ pipeline {
 				echo "Integration Test"
 			}
 		}
+	} pose {
+		always {
+			echo "I am awesome. I run always"
+		}
+		success {
+			echo "Run when success"
+		}
+		failure {
+			echo "Stage Fail!"
+		}
 	}
 }
