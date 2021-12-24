@@ -33,8 +33,8 @@ pipeline {
 			}
 		}
 	} 
-	
-	pose {
+
+	post {
 		always {
 			echo "I am awesome. I run always"
 		}
