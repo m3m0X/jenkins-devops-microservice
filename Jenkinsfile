@@ -59,16 +59,20 @@ pipeline {
 		}
 		stage('Build docker image') {
 			steps {
-				// docker build -t m3m0cker/repo:$env.BUILD_TAG
-				dockerImage = docker.build("m3m0cker/repo:${env.BUILD_TAG}")
+				script {
+					// docker build -t m3m0cker/repo:$env.BUILD_TAG
+					dockerImage = docker.build("m3m0cker/repo:${env.BUILD_TAG}")
+				}
+				
 			}
 		}
 		stage('Push docker image') {
 			steps {
-				// docker build -t m3m0cker/repo:$env.BUILD_TAG
-				docker.withRegistry('','dockerhub'){
-					dockerImage.push();
-					dockerImage.push('latest');
+				script {
+					docker.withRegistry('','dockerhub'){
+						dockerImage.push();
+						dockerImage.push('latest');
+					}
 				}
 			}
 		}
