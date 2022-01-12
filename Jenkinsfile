@@ -1,5 +1,4 @@
 //SCRIPTED
-
 // node {
 // 	stage('Build') {
 // 		echo "Build"
@@ -12,8 +11,8 @@
 // 	}
 // }
 
-//DECLARATIVE
 
+//DECLARATIVE
 pipeline {
 	agent any
 	//agent { docker { image 'maven:3.8.4' } }
